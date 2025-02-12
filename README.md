@@ -16,57 +16,83 @@
             color: #333;
             background-color: #f4f4f9;
             padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
 
         .profile-container {
-            display: flex;
-            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
             background: #fff;
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            text-align: center;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
         .profile-header img {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #ddd;
+            margin-bottom: 1rem;
         }
 
-        .profile-text {
-            margin-left: 2rem;
-        }
-
-        .profile-text h1 {
+        .profile-header h1 {
             font-size: 2rem;
-            font-weight: bold;
-            color: #000;
+            color: #0077b6;
         }
 
-        .profile-text p {
+        .profile-header p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .profile-content {
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .profile-content h2 {
+            font-size: 1.5rem;
+            color: #023e8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-content p {
             font-size: 1rem;
             color: #333;
-            margin-top: 10px;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
     <div class="profile-container">
         <div class="profile-header">
-            <img src="your-image-url-here.jpg" alt="Profile Picture">
-        </div>
-        <div class="profile-text">
+            <img src="https://drive.google.com/uc?export=view&id=YOUR_IMAGE_ID" alt="Profile Picture">
             <h1>Joshua Gil B. Ancheta</h1>
             <p>Student | Badminton Enthusiast | Loves Driving</p>
-            <p>Hi, I’m Joshua Gil B. Ancheta, a 20-year-old student from Tubod, Lanao del Norte. I am passionate about playing table tennis and badminton, and in my free time, I love immersing myself in anime and manga.</p>
+        </div>
+
+        <div class="profile-content">
+            <h2>About Me</h2>
+            <p>Hi, I’m Joshua Gil B. Ancheta, a 20-year-old student from Tubod, Lanao del Norte. I am passionate about playing table tennis and badminton. In my free time, I enjoy immersing myself in anime and manga. As an introvert, I prefer quiet nights indulging in my hobbies rather than social interactions.</p>
+            <p>I graduated from Mercy Junior College Inc. in Tubod, Lanao del Norte, where I also completed my senior high school education. My skills include communication, leadership, problem-solving, and time management. Additionally, I have basic knowledge of Figma for design. I am dedicated to continuous self-improvement and aspire to achieve success in the future.</p>
         </div>
     </div>
+
+    <footer>
+        <p>That's all. Thank you!</p>
+    </footer>
 </body>
 </html>
