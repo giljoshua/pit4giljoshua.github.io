@@ -79,7 +79,7 @@
 <body>
     <div class="profile-container">
         <div class="profile-header">
-            <img src="https://your-image-link.com" alt="Profile Picture">
+            <img src=<img src="images/picture of me.jpg" alt="Profile Picture">
             <h1>Joshua Gil B. Ancheta</h1>
             <p>Student | Badminton Enthusiast | Loves Driving</p>
         </div>
