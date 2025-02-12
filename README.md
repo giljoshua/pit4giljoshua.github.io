@@ -25,11 +25,20 @@
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .profile-header {
             text-align: center;
             margin-bottom: 1.5rem;
+        }
+
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
         }
 
         .profile-header h1 {
@@ -44,6 +53,7 @@
 
         .profile-content {
             margin-top: 1.5rem;
+            text-align: left;
         }
 
         .profile-content h2 {
@@ -69,18 +79,20 @@
 <body>
     <div class="profile-container">
         <div class="profile-header">
+            <img src="https://your-image-link.com" alt="Profile Picture">
             <h1>Joshua Gil B. Ancheta</h1>
             <p>Student | Badminton Enthusiast | Loves Driving</p>
         </div>
 
         <div class="profile-content">
             <h2>About Me</h2>
-            <p>Hi, I’m Joshua Gil B. Ancheta, a 20-year-old student from Tubod, Lanao del Norte. I am passionate about playing table tennis and badminton, and in my free time, I love immersing myself in anime, and  manga. I am a bit of an introvert, preferring quiet nights enjoying my hobbies over social interactions. Despite this, I am deeply dedicated to my interests and always strive to improve myself.</p>
+            <p>Hi, I’m Joshua Gil B. Ancheta, a 20-year-old student from Tubod, Lanao del Norte. I am passionate about playing table tennis and badminton, and in my free time, I love immersing myself in anime and manga. I am a bit of an introvert, preferring quiet nights enjoying my hobbies over social interactions. Despite this, I am deeply dedicated to my interests and always strive to improve myself.</p>
         </div>
     </div>
 
     <footer>
-        <p> Thats all Thank you....</p>
+        <p>That's all. Thank you!</p>
     </footer>
 </body>
 </html>
+
