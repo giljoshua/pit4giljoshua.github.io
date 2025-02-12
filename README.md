@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,7 +33,7 @@
         .profile-header img {
             width: 1300px;
             height: 1300px;
-            border-radius: 50%;
+            border-radius: 1500%;
             object-fit: cover;
             border: 3px solid #ddd;
         }
