@@ -31,9 +31,9 @@
         }
 
         .profile-header img {
-            width: 1300px;
-            height: 1300px;
-            border-radius: 1500%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             object-fit: cover;
             border: 3px solid #ddd;
         }
