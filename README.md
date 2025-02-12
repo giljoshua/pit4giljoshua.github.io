@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,52 +20,33 @@
         }
 
         .profile-container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
             background: #fff;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .profile-header img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
+            border: 5px solid #ddd;
         }
 
-        .profile-header h1 {
+        .profile-content h1 {
             font-size: 2rem;
             color: #0077b6;
         }
 
-        .profile-header p {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .profile-content {
-            margin-top: 1.5rem;
-            text-align: left;
-        }
-
-        .profile-content h2 {
-            font-size: 1.5rem;
-            color: #023e8a;
-            margin-bottom: 0.5rem;
-        }
-
         .profile-content p {
             font-size: 1rem;
-            color: #333;
+            color: #555;
             line-height: 1.8;
         }
 
@@ -80,11 +62,10 @@
     <div class="profile-container">
         <div class="profile-header">
             <img src="https://drive.google.com/uc?export=view&id=1sNdyBStMWm3qKVf99q1tKAL4g3P6A-9H" alt="Profile Picture">
+        </div>
+        <div class="profile-content">
             <h1>Joshua Gil B. Ancheta</h1>
             <p>Student | Badminton Enthusiast | Loves Driving</p>
-        </div>
-
-        <div class="profile-content">
             <h2>About Me</h2>
             <p>Hi, I’m Joshua Gil B. Ancheta, a 20-year-old student from Tubod, Lanao del Norte. I am passionate about playing table tennis and badminton, and in my free time, I love immersing myself in anime and manga. I am a bit of an introvert, preferring quiet nights enjoying my hobbies over social interactions. Despite this, I am deeply dedicated to my interests and always strive to improve myself.</p>
         </div>
@@ -95,5 +76,3 @@
     </footer>
 </body>
 </html>
-
- 
