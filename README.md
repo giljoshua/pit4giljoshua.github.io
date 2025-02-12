@@ -79,7 +79,7 @@
 <body>
     <div class="profile-container">
         <div class="profile-header">
-            <img src=<img src="images/picture of me.jpg" alt="Profile Picture">
+            <img src="https://drive.google.com/uc?export=view&id=1sNdyBStMWm3qKVf99q1tKAL4g3P6A-9H" alt="Profile Picture">
             <h1>Joshua Gil B. Ancheta</h1>
             <p>Student | Badminton Enthusiast | Loves Driving</p>
         </div>
@@ -95,4 +95,3 @@
     </footer>
 </body>
 </html>
-
