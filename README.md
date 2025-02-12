@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +30,6 @@
         }
 
         .profile-header {
-            text-align: center;
             margin-bottom: 1.5rem;
         }
 
@@ -60,12 +60,14 @@
             font-size: 1.5rem;
             color: #023e8a;
             margin-bottom: 0.5rem;
+            text-align: center;
         }
 
         .profile-content p {
             font-size: 1rem;
             color: #333;
             line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
         footer {
