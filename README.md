@@ -20,7 +20,7 @@
         }
 
         .profile-container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             background: #fff;
             padding: 2rem;
@@ -28,19 +28,19 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .profile-header img {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #ddd;
+            border: 3px solid #ddd;
         }
 
         .profile-content h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #0077b6;
         }
 
