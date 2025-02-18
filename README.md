@@ -80,7 +80,7 @@
 <body>
     <div class="profile-container">
         <div class="profile-header">
-            <img src="picture of me" alt="Profile Picture">
+            <img src="picture of me.jpg" alt="Profile Picture">
             <h1>Joshua Gil B. Ancheta</h1>
             <p>Student | Badminton Enthusiast | Loves Driving</p>
         </div>
