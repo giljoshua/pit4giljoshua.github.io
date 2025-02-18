@@ -80,7 +80,7 @@
 <body>
     <div class="profile-container">
         <div class="profile-header">
-            <img src="https://drive.google.com/uc?export=view&id=YOUR_IMAGE_ID" alt="Profile Picture">
+            <img src="picture of me" alt="Profile Picture">
             <h1>Joshua Gil B. Ancheta</h1>
             <p>Student | Badminton Enthusiast | Loves Driving</p>
         </div>
