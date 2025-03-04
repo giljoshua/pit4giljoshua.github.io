@@ -1,24 +1,50 @@
-.page-content{
-    padding-top:30px;
+.page-content {
+    padding-top: 30px;
     overflow: hidden;
-    }
-    .card {
-    /* Add shadows to create the "card" effect */
+}
+
+.card {
+    
     border: 3px solid teal;
     border-radius: 5px;
     width: 70%;
-    margin-top:3%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-top: 3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    }
-    .card-header{
-    padding:1%;
+}
+
+.card-header {
+    padding: 1%;
     font-size: 20px;
     font-weight: 700;
     border-bottom: 2px solid rgb(192, 192, 192);
-    }
-    .card-body{padding:5%;}
-    /* On mouse-over, add a deeper shadow */
-    .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
+}
+
+.card-body {
+    padding: 5%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Search bar styling */
+#searchBar {
+    width: 100%;
+    max-width: 400px;  /* Keeps it centered & readable */
+    padding: 10px;
+    margin: 10px auto;  /* Centers the search bar */
+    font-size: 16px;
+    border: 2px solid teal; /* Matches the card border */
+    border-radius: 5px;
+    display: block;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* When the user clicks or hovers over the search bar */
+#searchBar:focus {
+    border-color: rgb(0, 128, 128); /* Darker teal border when focused */
+    box-shadow: 0 0 5px rgba(0, 128, 128, 0.5);
+}
+
