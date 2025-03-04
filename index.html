@@ -29,10 +29,6 @@
             text-align: center;
         }
 
-        .profile-header {
-            margin-bottom: 1.5rem;
-        }
-
         .profile-header img {
             width: 150px;
             height: 150px;
@@ -46,34 +42,23 @@
             color: #0077b6;
         }
 
-        .profile-header p {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .profile-content {
-            margin-top: 1.5rem;
-            text-align: left;
-        }
-
-        .profile-content h2 {
-            font-size: 1.5rem;
-            color: #023e8a;
-            margin-bottom: 0.5rem;
+        .search-container {
+            margin-bottom: 1rem;
             text-align: center;
         }
 
-        .profile-content p {
+        .search-container input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             font-size: 1rem;
-            color: #333;
-            line-height: 1.8;
-            margin-bottom: 1rem;
         }
 
         .course-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .course-table th, .course-table td {
@@ -86,13 +71,6 @@
             background-color: #0077b6;
             color: white;
         }
-
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
     </style>
 </head>
 <body>
@@ -104,13 +82,10 @@
         </div>
 
         <div class="profile-content">
-            <h2>About Me</h2>
-            <p>Hi, I’m Joshua Gil B. Ancheta, a 20-year-old student from Tubod, Lanao del Norte. I am passionate about playing table tennis and badminton. In my free time, I enjoy immersing myself in anime and manga. As an introvert, I prefer quiet nights indulging in my hobbies rather than social interactions.</p>
-            <p>I graduated from Mercy Junior College Inc. in Tubod, Lanao del Norte, where I also completed my senior high school education. My skills include communication, leadership, problem-solving, and time management. Additionally, I have basic knowledge of Figma for design. I am dedicated to continuous self-improvement and aspire to achieve success in the future.</p>
-        </div>
-
-        <div class="profile-content">
             <h2>My Courses</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by course description...">
+            </div>
             <table class="course-table">
                 <thead>
                     <tr>
@@ -134,23 +109,39 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("searchInput");
+            const tableBody = document.getElementById("courseTableBody");
+
             fetch('courses.json')
                 .then(response => response.json())
                 .then(data => {
-                    const tableBody = document.getElementById("courseTableBody");
-                    data.courses.forEach(course => {
-                        const row = document.createElement("tr");
-                        row.innerHTML = `
-                            <td>${course.year_level}</td>
-                            <td>${course.sem}</td>
-                            <td>${course.code}</td>
-                            <td>${course.description}</td>
-                            <td>${course.credit}</td>
-                        `;
-                        tableBody.appendChild(row);
+                    let courses = data.courses;
+                    displayCourses(courses);
+
+                    searchInput.addEventListener("input", function() {
+                        const searchTerm = searchInput.value.toLowerCase();
+                        const filteredCourses = courses.filter(course =>
+                            course.description.toLowerCase().includes(searchTerm)
+                        );
+                        displayCourses(filteredCourses);
                     });
                 })
                 .catch(error => console.error("Error loading courses.json:", error));
+
+            function displayCourses(courses) {
+                tableBody.innerHTML = "";
+                courses.forEach(course => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${course.year_level}</td>
+                        <td>${course.sem}</td>
+                        <td>${course.code}</td>
+                        <td>${course.description}</td>
+                        <td>${course.credit}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
         });
     </script>
 </body>
