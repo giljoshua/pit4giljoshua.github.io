@@ -20,13 +20,17 @@
         }
 
         .profile-container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             background: #fff;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
+        }
+
+        .profile-header {
+            margin-bottom: 1.5rem;
         }
 
         .profile-header img {
@@ -37,20 +41,45 @@
             margin-bottom: 1rem;
         }
 
+        .profile-header h1 {
+            font-size: 2rem;
+            color: #0077b6;
+        }
+
+        .profile-header p {
+            font-size: 1rem;
+            color: #555;
+        }
+
         .profile-content {
             margin-top: 1.5rem;
             text-align: left;
         }
 
         .profile-content h2 {
-            text-align: center;
+            font-size: 1.5rem;
             color: #023e8a;
+            margin-bottom: 0.5rem;
+            text-align: center;
         }
 
-        .search-bar {
-            width: 100%;
+        .profile-content p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Search bar styling */
+        .search-container {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        #searchInput {
+            width: 80%;
             padding: 8px;
-            margin-bottom: 10px;
+            font-size: 1rem;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -58,7 +87,7 @@
         .course-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 1rem;
         }
 
         .course-table th, .course-table td {
@@ -71,6 +100,13 @@
             background-color: #0077b6;
             color: white;
         }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -82,8 +118,19 @@
         </div>
 
         <div class="profile-content">
+            <h2>About Me</h2>
+            <p>Hi, I’m Joshua Gil B. Ancheta, a 20-year-old student from Tubod, Lanao del Norte. I am passionate about playing table tennis and badminton. In my free time, I enjoy immersing myself in anime and manga. As an introvert, I prefer quiet nights indulging in my hobbies rather than social interactions.</p>
+            <p>I graduated from Mercy Junior College Inc. in Tubod, Lanao del Norte, where I also completed my senior high school education. My skills include communication, leadership, problem-solving, and time management. Additionally, I have basic knowledge of Figma for design. I am dedicated to continuous self-improvement and aspire to achieve success in the future.</p>
+        </div>
+
+        <div class="profile-content">
             <h2>My Courses</h2>
-            <input type="text" id="searchBar" class="search-bar" placeholder="Search courses...">
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search courses..." onkeyup="filterCourses()">
+            </div>
+
             <table class="course-table">
                 <thead>
                     <tr>
@@ -101,45 +148,40 @@
         </div>
     </div>
 
+    <footer>
+        <p>That's all. Thank you!</p>
+    </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('courses.json')
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.getElementById("courseTableBody");
-                    const searchBar = document.getElementById("searchBar");
-
-                    function renderTable(filteredCourses) {
-                        tableBody.innerHTML = "";
-                        filteredCourses.forEach(course => {
-                            const row = document.createElement("tr");
-                            row.innerHTML = `
-                                <td>${course.year_level}</td>
-                                <td>${course.sem}</td>
-                                <td>${course.code}</td>
-                                <td>${course.description}</td>
-                                <td>${course.credit}</td>
-                            `;
-                            tableBody.appendChild(row);
-                        });
-                    }
-
-                    renderTable(data.courses);
-
-                    searchBar.addEventListener("input", function() {
-                        const searchTerm = searchBar.value.toLowerCase();
-                        const filteredCourses = data.courses.filter(course =>
-                            course.year_level.toLowerCase().includes(searchTerm) ||
-                            course.sem.toLowerCase().includes(searchTerm) ||
-                            course.code.toLowerCase().includes(searchTerm) ||
-                            course.description.toLowerCase().includes(searchTerm)
-                        );
-                        renderTable(filteredCourses);
+                    data.courses.forEach(course => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td>${course.year_level}</td>
+                            <td>${course.sem}</td>
+                            <td>${course.code}</td>
+                            <td>${course.description}</td>
+                            <td>${course.credit}</td>
+                        `;
+                        tableBody.appendChild(row);
                     });
                 })
                 .catch(error => console.error("Error loading courses.json:", error));
         });
+
+        function filterCourses() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let rows = document.querySelectorAll("#courseTableBody tr");
+
+            rows.forEach(row => {
+                let text = row.innerText.toLowerCase();
+                row.style.display = text.includes(input) ? "" : "none";
+            });
+        }
     </script>
 </body>
 </html>
- 
